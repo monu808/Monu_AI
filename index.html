@@ -3,20 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text-to-Image</title>
+    <title>AI Image Studio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Text-to-Image Generator</h1>
-        <h4>Only upto 200 image generation is free...!</h4>
-        <div class="input-container">
-            <textarea id="textInput" placeholder="Enter text description..."></textarea><br>
-            <button id="generateBtn"><i class="fas fa-camera"></i> Generate Image</button>
+        <div class="header">
+            <h1>AI Image Studio</h1>
+            <h4>✨ 200 Free Generations/Month ✨</h4>
         </div>
-        <div id="imageContainer"></div>
+
+        <div class="feature-selector">
+            <select id="modeSelect" class="mode-select">
+                <option value="text-to-image">Text to Image</option>
+                <option value="cleanup">Cleanup</option>
+                <option value="upscale">Image Upscaling</option>
+                <option value="depth-estimation">Portrait Depth Estimation</option>
+                <option value="surface-normals">Surface Normals</option>
+                <option value="product-photo">Product Photography</option>
+                <option value="reimagine">Reimagine</option>
+                <option value="remove-bg">Remove Background</option>
+                <option value="remove-text">Remove Text</option>
+                <option value="replace-bg">Replace Background</option>
+                <option value="text-inpainting">Text Inpainting</option>
+                <option value="uncrop">Uncrop</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <textarea id="textInput" placeholder="Enter your prompt or instructions..."></textarea>
+            <input type="file" id="fileInput" class="file-input" accept="image/*">
+            <label for="fileInput" class="upload-label" id="uploadLabel">
+                <i class="fas fa-upload"></i> Upload Image
+            </label>
+            <button id="generateBtn">
+                <i class="fas fa-magic"></i> Generate
+            </button>
+        </div>
+
+        <div id="imageContainer">
+            <div class="loading-spinner"></div>
+            <div id="resultText"></div>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
