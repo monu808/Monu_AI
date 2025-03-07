@@ -3,7 +3,7 @@ document.getElementById('generateBtn').addEventListener('click', function() {
     var text = document.getElementById('textInput').value.trim();
     
     // Make API call to CLIP Drop
-    var apiKey = '19aa43845c714908cb21b9918b6184115c388b239fe0f9fdf471751591a8e29666234f1a9cce9890de85b2039a375743'; // Replace with your actual API key
+    var apiKey = '0d8b1c09003397d707115dd444182d8db4c9c55d6ff4f35c721378c24d90117d5e4127e21313d17c3a84c7d6c9953d17'; // Replace with your actual API key
     const form = new FormData();
     form.append('prompt', text);
 
